@@ -47,7 +47,7 @@ app.use('/api/auth', authRoutes);
 // for every route, on every request, make sure there is a token
 const ensureAuth = require('./lib/auth/ensure-auth');
 
-app.use('/api', ensureAuth);
+app.use('/api/me', ensureAuth);
 
 //connect to swapi
 const request = require('superagent');
