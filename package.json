@@ -1,0 +1,43 @@
+{
+  "name": "favorites-node",
+  "version": "1.0.0",
+  "description": "favvvvv",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "exit 0",
+    "start": "node app.js",
+    "start:watch": "nodemon --ignore public app.js",
+    "create-tables": "node data/create-tables.js",
+    "drop-tables": "node data/drop-tables.js",
+    "load-seed-data": "node data/load-seed-data.js",
+    "recreate-tables": "npm run drop-tables && npm run create-tables",
+    "setup-db": "npm run recreate-tables",
+    "setup-db:prod": "heroku run npm run setup-db",
+    "setup-heroku": "heroku addons:create heroku-postgresql:hobby-dev && heroku config:set PGSSLMODE=require"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeHarlan/favorites-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeHarlan/favorites-node/issues"
+  },
+  "homepage": "https://github.com/SeHarlan/favorites-node#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "pg": "^7.18.2",
+    "superagent": "^5.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "nodemon": "^1.19.4"
+  }
+}
