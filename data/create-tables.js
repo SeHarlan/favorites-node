@@ -20,13 +20,13 @@ async function run() {
                     id SERIAL PRIMARY KEY NOT NULL,
                     name VARCHAR(512) NOT NULL,
                     birth_year VARCHAR(512) NOT NULL,
-                    homeworld_name VARCHAR(512) NOT NULL,
-                    homeworld_climate VARCHAR(512) NOT NULL,
-                    homeworld_population VARCHAR(512) NOT NULL,
+                    mass VARCHAR(512) NOT NULL,
+                    height VARCHAR(512) NOT NULL,
+                    eye_color VARCHAR(512) NOT NULL,
                     user_id INTEGER NOT NULL REFERENCES users(id)
             );
         `);
-
+      
         console.log('create tables complete');
     }
     catch (err) {

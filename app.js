@@ -87,10 +87,10 @@ app.post('/api/me/favorites', async(req, res) => {
     try {
         const result = await client.query(`
             INSERT INTO favorites
-            (name, birth_year, homeworld_name, homeworld_climate, homeworld_population, user_id)
+            (name, birth_year, mass, height, eye_color, user_id)
             VALUES ($1, $2, $3, $4, $5, $6)
             RETURNING *;
-        `, [req.body.name, req.body.birth_year, req.body.homeworld_name, req.body.homeworld_climate, req.body.homeworld_population, req.userId]);
+        `, [req.body.name, req.body.birth_year, req.body.mass, req.body.height, req.body.eye_color, req.userId]);
 
         res.json(result.rows[0]);
     }
